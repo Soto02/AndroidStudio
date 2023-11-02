@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Intent2</string>
+    <string name="button">Iniciar Sesión</string>
+    <string name="salir">Salir</string>
+</resources>
