@@ -133,8 +133,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Iniciar Sesión"
-                android:textColor="@color/black"/>
+                android:text="@string/IniciarSesion"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="170dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginEnd="85dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnRegistrarse"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Registrarse"
+                android:textColor="@color/black" />
+
         </LinearLayout>
 
     </LinearLayout>
