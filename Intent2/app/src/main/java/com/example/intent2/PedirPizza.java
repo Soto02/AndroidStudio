@@ -15,12 +15,12 @@ public class PedirPizza extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedir_pizza);
 
-        ImageView logo = findViewById(R.id.logoConfig);
+        ImageView logo = findViewById(R.id.logoPizza);
         logo.setImageResource(R.drawable.pizzalogo);
 
         Button botonVolver = (Button) findViewById(R.id.btnVolver);
 
-        Button botonPersonalizada = (Button) findViewById(R.id.btnColorFondo);
+        Button botonPersonalizada = (Button) findViewById(R.id.btnPizzaPersonalizada);
         botonPersonalizada.setBackgroundColor(getResources().getColor(R.color.red));
 
         Button botonPasoPaso = (Button) findViewById(R.id.btnPasoAPaso);

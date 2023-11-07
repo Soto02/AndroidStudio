@@ -15,16 +15,16 @@ public class PaginaPrincipal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new);
 
-        ImageView logo = findViewById(R.id.logoConfig);
+        ImageView logo = findViewById(R.id.logoPizza);
         logo.setImageResource(R.drawable.pizzalogo);
 
-        Button botonPedir = (Button) findViewById(R.id.btnColorFondo);
+        Button botonPedir = (Button) findViewById(R.id.btnElegirPizza);
         botonPedir.setBackgroundColor(getResources().getColor(R.color.red));
 
-        Button botonConfigurar = (Button) findViewById(R.id.btnPasoAPaso);
+        Button botonConfigurar = (Button) findViewById(R.id.btnConfiguracion);
         botonConfigurar.setBackgroundColor(getResources().getColor(R.color.white));
 
-        Button botonSalir = (Button) findViewById(R.id.btnUltimoPedido);
+        Button botonSalir = (Button) findViewById(R.id.btnSalir);
         botonSalir.setBackgroundColor(getResources().getColor(R.color.green));
 
         botonPedir.setOnClickListener(new View.OnClickListener() {

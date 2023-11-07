@@ -4,6 +4,7 @@ import static com.example.intent2.R.id.btnIniciarSesion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,7 +17,7 @@ import android.widget.Toast;
 public class IniciarSesion extends AppCompatActivity {
 
     EditText nombreEdit, contrasenaEdit;
-    Button login, registrar;
+    Button login, registrar, config;
     SharedPreferences preferencias;
 
     @Override
@@ -28,6 +29,7 @@ public class IniciarSesion extends AppCompatActivity {
         contrasenaEdit = (EditText) findViewById(R.id.introContrasena);
         login = (Button) findViewById(R.id.btnIniciarSesion);
         registrar = (Button) findViewById(R.id.btnRegistrarse);
+        config = (Button) findViewById(R.id.btnConf);
 
         preferencias = getSharedPreferences("user", MODE_PRIVATE);
 
@@ -59,38 +61,29 @@ public class IniciarSesion extends AppCompatActivity {
                 String nombre = nombreEdit.getText().toString();
                 String contrasena = contrasenaEdit.getText().toString();
 
-                SharedPreferences.Editor editor = preferencias.edit();
-                editor.putString("nombre", nombre);
-                editor.putString("contrasena", contrasena);
-                editor.apply();
+                if(nombre.isEmpty() && contrasena.isEmpty()) {
+                    Toast.makeText(IniciarSesion.this, "Tiene que registrarse", Toast.LENGTH_SHORT).show();
+                } else {
+                    SharedPreferences.Editor editor = preferencias.edit();
+                    editor.putString("nombre", nombre);
+                    editor.putString("contrasena", contrasena);
+                    editor.apply();
 
-                Toast.makeText(IniciarSesion.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(IniciarSesion.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
+
+        config.setBackgroundColor(getResources().getColor(R.color.grey));
+        config.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(IniciarSesion.this, Configuracion.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
 }
-    /*private void guardarPreferencias() {
-        SharedPreferences preferencias = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
-
-        String user = nombreEdit.getText().toString();
-        String pass = contrasenaEdit.getText().toString();
-
-        SharedPreferences.Editor editor = preferencias.edit();
-        editor.putString("user", user);
-        editor.putString("pass", pass);
-
-        editor.commit();
-    }*/
-    /*private void cargarPreferencias() {
-        SharedPreferences preferencias = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
-
-        String user = preferencias.getString("user", "No existe");
-        String pass = preferencias.getString("pass", "No existe");
-    }*/
-
-
-/*
-Intent intent = new Intent(IniciarSesion.this, PaginaPrincipal.class);
-                startActivity(intent);
-                finish();
- */

@@ -43,7 +43,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/logoConfig"
+                android:id="@+id/logoPizza"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -62,12 +62,13 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnColorFondo"
+
+                android:id="@+id/btnElegirPizza"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Elegir pizza"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -81,12 +82,12 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnPasoAPaso"
+                android:id="@+id/btnConfiguracion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Configurar"
-                android:textColor="@color/black"/>
+                android:text="Configuracion"
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -100,12 +101,12 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnUltimoPedido"
+                android:id="@+id/btnSalir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Salir"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout

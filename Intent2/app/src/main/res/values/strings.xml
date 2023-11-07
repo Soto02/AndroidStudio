@@ -3,4 +3,6 @@
     <string name="button">Iniciar Sesión</string>
     <string name="salir">Salir</string>
     <string name="IniciarSesion">Iniciar Sesión</string>
+    <string name="PizzaPersonalizada">Pizza personalizada</string>
+    <string name="Configuracion">Conf</string>
 </resources>

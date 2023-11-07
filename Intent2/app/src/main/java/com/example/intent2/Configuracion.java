@@ -15,10 +15,10 @@ public class Configuracion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
 
-        ImageView logo = findViewById(R.id.logoConfig);
+        ImageView logo = findViewById(R.id.logoConfiguracion);
         logo.setImageResource(R.drawable.configuracionlogo);
 
-        Button botonElegir = (Button) findViewById(R.id.btnColorFondo);
+        Button botonElegir = (Button) findViewById(R.id.btnColor);
         botonElegir.setBackgroundColor(getResources().getColor(R.color.grey));
 
         Button botonGuardar = (Button) findViewById(R.id.btnGuardar);
@@ -31,7 +31,7 @@ public class Configuracion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String action;
-                Intent intent = new Intent(Configuracion.this, PaginaPrincipal.class);
+                Intent intent = new Intent(Configuracion.this, IniciarSesion.class);
                 startActivity(intent);
                 finish();
             }
