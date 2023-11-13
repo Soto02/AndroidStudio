@@ -36,5 +36,15 @@ public class Configuracion extends AppCompatActivity {
                 finish();
             }
         });
+
+        botonElegir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String action;
+                Intent intent = new Intent(Configuracion.this, ColorFondo.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

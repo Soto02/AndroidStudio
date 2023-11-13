@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Intent2"
         tools:targetApi="31">
         <activity
+            android:name=".ColorFondo"
+            android:exported="false" />
+        <activity
             android:name=".PedirPizza"
             android:exported="false" />
         <activity
