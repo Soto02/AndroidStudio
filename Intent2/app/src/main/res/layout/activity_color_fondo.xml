@@ -88,5 +88,84 @@
             android:layout_height="12dp"
             android:orientation="horizontal"></LinearLayout>
 
+        <LinearLayout
+            android:layout_width="147dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="95dp"
+            android:layout_marginEnd="85dp"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/cbVerde"
+                android:layout_width="134dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="cursive"
+                android:text="Verde"
+                android:textSize="29dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="147dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="95dp"
+            android:layout_marginEnd="85dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cbAzul"
+                android:layout_width="134dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="cursive"
+                android:text="Azul"
+                android:textSize="29dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="147dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="95dp"
+            android:layout_marginEnd="85dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:layout_width="134dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="cursive"
+                android:text="Blanco"
+                android:textSize="29dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:orientation="horizontal"></LinearLayout>
+
+        <Button
+            android:id="@+id/btnVolverConfig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Volver"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal"></LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
