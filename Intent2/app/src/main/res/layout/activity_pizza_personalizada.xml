@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityPizzaPersonalizada">
+
+    <TextView
+        android:id="@+id/textViewIngredientes"
+        android:layout_width="180dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="180dp"
+        android:fontFamily="cursive"
+        android:text="Ingredientes:"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GrupoPizzas" />
+
+    <TextView
+        android:id="@+id/textViewTamaños"
+        android:layout_width="130dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
+        android:fontFamily="cursive"
+        android:text="Tamaños:"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/GrupoPizzas"
+        android:layout_width="161dp"
+        android:layout_height="328dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="26dp"
+        app:layout_constraintEnd_toStartOf="@+id/GrupoTamaños"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPizzas">
+
+        <RadioButton
+            android:id="@+id/rdBBQ"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="cursive"
+            android:onClick="onClick"
+            android:text="BBQ"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rbCarbonara"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="cursive"
+            android:onClick="onClick"
+            android:text="Carbonara"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rbQuesos"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="cursive"
+            android:onClick="onClick"
+            android:text="4 Quesos"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rbPeperoni"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="cursive"
+            android:onClick="onClick"
+            android:text="Peperoni"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rbAlejandrina"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="cursive"
+            android:onClick="onClick"
+            android:text="Alejandrina"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rbMileurista"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="cursive"
+            android:onClick="onClick"
+            android:text="La Mileurista"
+            android:textSize="20sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewPizzas"
+        android:layout_width="100dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="96dp"
+        android:fontFamily="cursive"
+        android:text="Pizzas:"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewTamaños"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/GrupoTamaños"
+        android:layout_width="167dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="412dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rbFamiliar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="cursive"
+            android:onClick="onClick"
+            android:text="Familiar"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rbGrande"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="cursive"
+            android:onClick="onClick"
+            android:text="Grande"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rbMediana"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="cursive"
+            android:onClick="onClick"
+            android:text="Mediana"
+            android:textSize="20sp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnAñadirPizza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="120dp"
+        android:fontFamily="cursive"
+        android:onClick="onClick"
+        android:text="Añadir Pizza"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMostrarIngredientes" />
+
+    <Button
+        android:id="@+id/btnFinalizarPrdido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="152dp"
+        android:fontFamily="cursive"
+        android:onClick="onClick"
+        android:text="Finalizar pedido"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAñadirPizza" />
+
+    <TextView
+        android:id="@+id/txtMostrarIngredientes"
+        android:layout_width="330dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="cursive"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIngredientes" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="cursive"
+        android:onClick="onClick"
+        android:text="Cancelar"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

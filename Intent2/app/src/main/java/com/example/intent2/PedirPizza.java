@@ -3,6 +3,8 @@ package com.example.intent2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +21,7 @@ public class PedirPizza extends AppCompatActivity {
         logo.setImageResource(R.drawable.pizzalogo);
 
         Button botonVolver = (Button) findViewById(R.id.btnVolver);
+        botonVolver.setBackgroundColor(getResources().getColor(R.color.grey));
 
         Button botonPersonalizada = (Button) findViewById(R.id.btnPizzaPersonalizada);
         botonPersonalizada.setBackgroundColor(getResources().getColor(R.color.red));
@@ -38,6 +41,11 @@ public class PedirPizza extends AppCompatActivity {
                 finish();
             }
         });
+
+        ActivityHeredar.agregarActivity(this);
+        SharedPreferences preferencias = getSharedPreferences("preferencia", MODE_PRIVATE);
+        int colorGuardado = preferencias.getInt("colorSeleccionado", Color.WHITE);
+        ActivityHeredar.aplicarColorEnTodas(colorGuardado);
 
     }
 }

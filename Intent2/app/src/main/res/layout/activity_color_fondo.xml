@@ -141,13 +141,14 @@
             android:orientation="horizontal">
 
             <CheckBox
+                android:id="@+id/cbBlanco"
                 android:layout_width="134dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:fontFamily="cursive"
                 android:text="Blanco"
-                android:textSize="29dp"/>
+                android:textSize="29dp" />
         </LinearLayout>
 
         <LinearLayout
