@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pizzeria</string>
+    <string name="title_activity_menu_frag">ActivityMenuFrag</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_dashboard">Configuracion</string>
+    <string name="title_notifications">Info</string>
+</resources>

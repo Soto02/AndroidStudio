@@ -32,6 +32,15 @@ public class PedirPizza extends AppCompatActivity {
         Button botonUltimoPedido = (Button) findViewById(R.id.btnUltimoPedido);
         botonUltimoPedido.setBackgroundColor(getResources().getColor(R.color.green));
 
+        botonPersonalizada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PedirPizza.this, ActivityPizzaPersonalizada.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         botonVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityRegistrarse">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="166dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="123dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/descarga_removebg_preview" />
+
+    <TextView
+        android:id="@+id/textViewContraseña"
+        android:layout_width="172dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="160dp"
+        android:fontFamily="@font/audiowide"
+        android:text="Contraseña"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBoxUsuario" />
+
+    <TextView
+        android:id="@+id/textViewUsuario"
+        android:layout_width="113dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="219dp"
+        android:fontFamily="@font/audiowide"
+        android:text="Usuario"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <EditText
+        android:id="@+id/textBoxUsuario"
+        android:layout_width="252dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginEnd="81dp"
+        android:backgroundTint="#8C8C8C"
+        android:ems="10"
+        android:fontFamily="@font/audiowide"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUsuario" />
+
+    <EditText
+        android:id="@+id/textBoxContraseña"
+        android:layout_width="252dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginEnd="80dp"
+        android:backgroundTint="#8C8C8C"
+        android:ems="10"
+        android:fontFamily="@font/audiowide"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewContraseña" />
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="97dp"
+        android:layout_marginEnd="159dp"
+        android:fontFamily="@font/audiowide"
+        android:onClick="onClick"
+        android:text="Registrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBoxContraseña" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

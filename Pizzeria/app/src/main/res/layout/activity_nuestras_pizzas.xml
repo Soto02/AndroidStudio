@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layoutPizzas"
+    android:id="@+id/layout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityPizzaPersonalizada">
+    tools:context=".ActivityNuestrasPizzas">
 
     <TextView
         android:id="@+id/textViewIngredientes"
@@ -14,7 +14,7 @@
         android:layout_marginStart="51dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="180dp"
-        android:fontFamily="cursive"
+        android:fontFamily="@font/audiowide"
         android:text="Ingredientes:"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +27,7 @@
         android:layout_height="28dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="36dp"
-        android:fontFamily="cursive"
+        android:fontFamily="@font/audiowide"
         android:text="Tamaños:"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,57 +45,51 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewPizzas">
 
         <RadioButton
-            android:id="@+id/rdBBQ"
+            android:id="@+id/radioButtonPizza1"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:fontFamily="cursive"
+            android:fontFamily="@font/audiowide"
             android:onClick="onClick"
-            android:text="BBQ"
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/rbCarbonara"
+            android:id="@+id/radioButtonPizza2"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:fontFamily="cursive"
+            android:fontFamily="@font/audiowide"
             android:onClick="onClick"
-            android:text="Carbonara"
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/rbQuesos"
+            android:id="@+id/radioButtonPizza3"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:fontFamily="cursive"
+            android:fontFamily="@font/audiowide"
             android:onClick="onClick"
-            android:text="4 Quesos"
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/rbPeperoni"
+            android:id="@+id/radioButtonPizza4"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:fontFamily="cursive"
+            android:fontFamily="@font/audiowide"
             android:onClick="onClick"
-            android:text="Peperoni"
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/rbAlejandrina"
+            android:id="@+id/radioButtonPizza5"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:fontFamily="cursive"
+            android:fontFamily="@font/audiowide"
             android:onClick="onClick"
-            android:text="Alejandrina"
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/rbMileurista"
+            android:id="@+id/radioButtonPizza6"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:fontFamily="cursive"
+            android:fontFamily="@font/audiowide"
             android:onClick="onClick"
-            android:text="La Mileurista"
             android:textSize="20sp" />
 
     </RadioGroup>
@@ -107,7 +101,7 @@
         android:layout_marginStart="49dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="96dp"
-        android:fontFamily="cursive"
+        android:fontFamily="@font/audiowide"
         android:text="Pizzas:"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/textViewTamaños"
@@ -117,37 +111,34 @@
     <RadioGroup
         android:id="@+id/GrupoTamaños"
         android:layout_width="167dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="64dp"
+        android:layout_height="165dp"
         android:layout_marginEnd="14dp"
-        android:layout_marginBottom="412dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCancelar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textViewTamaños">
 
         <RadioButton
-            android:id="@+id/rbFamiliar"
+            android:id="@+id/radioButtonFamiliar"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:fontFamily="cursive"
+            android:fontFamily="@font/audiowide"
             android:onClick="onClick"
             android:text="Familiar"
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/rbGrande"
+            android:id="@+id/radioButtonGrande"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:fontFamily="cursive"
+            android:fontFamily="@font/audiowide"
             android:onClick="onClick"
             android:text="Grande"
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/rbMediana"
+            android:id="@+id/radioButtonMediana"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:fontFamily="cursive"
+            android:fontFamily="@font/audiowide"
             android:onClick="onClick"
             android:text="Mediana"
             android:textSize="20sp" />
@@ -161,56 +152,38 @@
         android:layout_marginStart="120dp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="120dp"
-        android:fontFamily="cursive"
+        android:fontFamily="@font/audiowide"
         android:onClick="onClick"
         android:text="Añadir Pizza"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMostrarIngredientes" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewIngrSeleccionado" />
 
     <Button
         android:id="@+id/btnFinalizarPrdido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="152dp"
-        android:fontFamily="cursive"
+        android:fontFamily="@font/audiowide"
         android:onClick="onClick"
         android:text="Finalizar pedido"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAñadirPizza" />
 
     <TextView
-        android:id="@+id/txtMostrarIngredientes"
+        android:id="@+id/textViewIngrSeleccionado"
         android:layout_width="330dp"
         android:layout_height="61dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
-        android:fontFamily="cursive"
+        android:fontFamily="@font/audiowide"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewIngredientes" />
-
-    <Button
-        android:id="@+id/btnCancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="40dp"
-        android:fontFamily="cursive"
-        android:onClick="onClick"
-        android:text="Cancelar"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
