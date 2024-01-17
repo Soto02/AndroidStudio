@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ExamenIgnacioFernandezSanchez</string>
+    <string name="titulo">BRAIN TRAINING</string>
+    <string name="txtBtnJugar">Jugar</string>
+    <string name="txtBtnPuntuaciones">Puntuaciones</string>
+    <string name="txtBtnConfigurar">Configurar</string>
+    <string name="txtBtnSalir">Salir</string>
+    <string name="txtBtnVolver">Volver al inicio</string>
+    <string name="txtBtnComprobar">Comprobar</string>
+    <string name="txtPalabrasAcertadasTituloLabel">Palabras acertadas:</string>
+</resources>

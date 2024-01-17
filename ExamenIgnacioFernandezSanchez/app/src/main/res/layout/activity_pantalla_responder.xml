@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PantallaResponder">
+
+    <EditText
+        android:id="@+id/edtPalabra"
+        android:layout_width="280dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPalabrasAcertadas"
+        android:layout_width="86dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPalabrasAcertadasTitulo" />
+
+    <TextView
+        android:id="@+id/txtPalabrasAcertadasTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="@string/txtPalabrasAcertadasTituloLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnComprobar" />
+
+    <Button
+        android:id="@+id/btnComprobar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="comprobarPalabra"
+        android:text="@string/txtBtnComprobar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPalabra" />
+
+    <Button
+        android:id="@+id/btnComprobar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="volverInicio"
+        android:text="@string/txtBtnVolver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPalabrasAcertadas" />
+
+    <ProgressBar
+        android:id="@+id/pbProgreso"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="342dp"
+        android:layout_height="43dp"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="188dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

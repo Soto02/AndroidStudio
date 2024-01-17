@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PantallaConfiguracion">
+
+    <CheckBox
+        android:id="@+id/cbFacil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:text="Facil"
+        app:layout_constraintStart_toStartOf="@+id/cbMedia"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:text="DIFICULTAD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cbMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="11dp"
+        android:text="Media"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/cbFacil" />
+
+    <CheckBox
+        android:id="@+id/cbDificil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="16dp"
+        android:text="Dificil"
+        app:layout_constraintStart_toStartOf="@+id/cbMedia"
+        app:layout_constraintTop_toBottomOf="@+id/cbMedia" />
+
+    <Button
+        android:id="@+id/btnListarPalabrasConfig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Listar palabras"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbDificil" />
+
+    <Button
+        android:id="@+id/btnVolverConfig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="49dp"
+        android:text="Volver"
+        app:layout_constraintStart_toStartOf="@+id/btnListarPalabrasConfig"
+        app:layout_constraintTop_toBottomOf="@+id/btnListarPalabrasConfig" />
+</androidx.constraintlayout.widget.ConstraintLayout>
