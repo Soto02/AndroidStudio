@@ -34,15 +34,21 @@ public class Rectangulo extends Figura{
 
         boolean dentro = false;
 
-        if(((posX+ancho) >= this.getPosicionX()) && (posY-alto <= this.getPosicionY())) {
+        if(((posX+ancho) >= this.getPosicionX()) && ((posY-alto) <= this.getPosicionY())) {
             dentro = true;
         }
         return dentro;
     }
 
+    public boolean encajan(RectanguloVacio rv) {
+
+        return this.ancho <= rv.getAnchoVacio() && this.alto <= rv.getAltoVacio();
+    }
+
     public void onDraw(int x, int y, Canvas canvas) {
         Paint paint = new Paint();
         paint.setColor(Color.RED);
+        paint.setStyle(Paint.Style.FILL);
 
         canvas.drawRect(x,y,x+ancho,y-alto,paint);
     }

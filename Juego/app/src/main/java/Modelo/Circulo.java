@@ -33,9 +33,16 @@ public class Circulo extends Figura{
         return dentro;
     }
 
+    public boolean encajan(CirculoVacio cv) {
+
+        double distancia = Math.sqrt(Math.pow(this.getPosicionX() - cv.getPosicionX(), 2) + Math.pow(this.getPosicionY() - cv.getPosicionY(), 2));
+        return distancia + this.radio <= cv.getRadioVacio();
+    }
+
     public void onDraw(int x, int y, Canvas canvas) {
         Paint paint = new Paint();
         paint.setColor(Color.BLUE);
+        paint.setStyle(Paint.Style.FILL);
         canvas.drawCircle(x,y,radio,paint);
     }
 }
