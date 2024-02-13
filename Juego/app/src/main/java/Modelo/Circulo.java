@@ -8,8 +8,8 @@ public class Circulo extends Figura{
 
     private float radio;
 
-    public Circulo(float x, float y,int id, float radio) {
-        super(x, y,id);
+    public Circulo(float x, float y,boolean rellenado, float radio) {
+        super(x, y,rellenado);
         this.radio = radio;
     }
 
@@ -39,10 +39,8 @@ public class Circulo extends Figura{
         return distancia + this.radio <= cv.getRadioVacio();
     }
 
-    public void onDraw(int x, int y, Canvas canvas) {
-        Paint paint = new Paint();
-        paint.setColor(Color.BLUE);
-        paint.setStyle(Paint.Style.FILL);
+    public void onDraw(int x, int y, Canvas canvas, Paint paint) {
+
         canvas.drawCircle(x,y,radio,paint);
     }
 }

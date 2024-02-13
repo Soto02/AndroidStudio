@@ -2,32 +2,21 @@ package com.example.juego;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.accessibilityservice.GestureDescription;
-import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.util.Random;
+import Modelo.Puntuacion;
 
-import Modelo.Circulo;
-import Modelo.CirculoVacio;
-import Modelo.Rectangulo;
-import Modelo.RectanguloVacio;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Puntuacion {
 
     private DragAndDropView dragAndDropView;
     private RelativeLayout relativeLayout;
+    private TextView txtPuntos;
+    private int puntos;
     private int id = 0;
 
 
@@ -38,8 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
         dragAndDropView = new DragAndDropView(this);
         dragAndDropView.setBackgroundColor(Color.WHITE);
+        dragAndDropView.setPuntuacion(this);
         relativeLayout =findViewById(R.id.relativeLayout);
         relativeLayout.addView(dragAndDropView);
+
+        txtPuntos = findViewById(R.id.txtPuntos);
+        puntos = 0;
 
         Button btnPintarCirculo = (Button) findViewById(R.id.btnCirculo);
 
@@ -48,39 +41,27 @@ public class MainActivity extends AppCompatActivity {
         btnPintarCirculo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int posX = generarPosicionRandom(relativeLayout.getWidth());
-                int posY = generarPosicionRandom(relativeLayout.getHeight());
-                int posXv = generarPosicionRandom(relativeLayout.getWidth());
-                int posYv = generarPosicionRandom(relativeLayout.getHeight());
-                Circulo c = new Circulo(posX, posY, id++, 100);
-                CirculoVacio cv = new CirculoVacio(posXv, posYv, id++, 100);
-
-                dragAndDropView.agregarFigura(c);
-                dragAndDropView.agregarFigura(cv);
+                dragAndDropView.agregarCirculo();
             }
         });
 
         btnPintarCuadrado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int posX = generarPosicionRandom(relativeLayout.getWidth());
-                int posY = generarPosicionRandom(relativeLayout.getHeight());
-                int posXv = generarPosicionRandom(relativeLayout.getWidth());
-                int posYv = generarPosicionRandom(relativeLayout.getHeight());
-                Rectangulo r = new Rectangulo(posX, posY, id++, 150, 150);
-                RectanguloVacio rv = new RectanguloVacio(posXv, posYv, id++, 150, 150);
-
-                dragAndDropView.agregarFigura(r);
-                dragAndDropView.agregarFigura(rv);
+                dragAndDropView.agregarRectangulo();
             }
         });
-
     }
 
-    private int generarPosicionRandom(int max) {
-        return (int) (Math.random() * max);
+    @Override
+    public void actualizarPuntuacion(int nuevosPuntos) {
+        puntos += nuevosPuntos;
+        sumarPuntos();
     }
 
+    private void sumarPuntos() {
+        runOnUiThread(() -> txtPuntos.setText(String.valueOf(puntos)));
+    }
 
 }
     //requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -147,3 +128,15 @@ public class MainActivity extends AppCompatActivity {
 
         return true;
     }*/
+
+/*
+int posX = generarPosicionRandom(relativeLayout.getWidth());
+                int posY = generarPosicionRandom(relativeLayout.getHeight());
+                int posXv = generarPosicionRandom(relativeLayout.getWidth());
+                int posYv = generarPosicionRandom(relativeLayout.getHeight());
+                Rectangulo r = new Rectangulo(posX, posY, false, 150, 150);
+                RectanguloVacio rv = new RectanguloVacio(posXv, posYv, false, 150, 150);
+
+                dragAndDropView.agregarFigura(r);
+                dragAndDropView.agregarFigura(rv);
+ */

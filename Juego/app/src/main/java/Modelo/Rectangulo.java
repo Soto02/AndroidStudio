@@ -8,8 +8,8 @@ public class Rectangulo extends Figura{
 
     private float ancho, alto;
 
-    public Rectangulo(float x, float y,int id, float ancho, float alto) {
-        super(x, y,id);
+    public Rectangulo(float x, float y,boolean rellenado, float ancho, float alto) {
+        super(x, y,rellenado);
         this.ancho = ancho;
         this.alto = alto;
     }
@@ -45,10 +45,7 @@ public class Rectangulo extends Figura{
         return this.ancho <= rv.getAnchoVacio() && this.alto <= rv.getAltoVacio();
     }
 
-    public void onDraw(int x, int y, Canvas canvas) {
-        Paint paint = new Paint();
-        paint.setColor(Color.RED);
-        paint.setStyle(Paint.Style.FILL);
+    public void onDraw(int x, int y, Canvas canvas, Paint paint) {
 
         canvas.drawRect(x,y,x+ancho,y-alto,paint);
     }

@@ -2,6 +2,8 @@ package com.example.juego;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -9,32 +11,67 @@ import android.view.SurfaceView;
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 
 import Modelo.Circulo;
-import Modelo.CirculoVacio;
 import Modelo.Figura;
+import Modelo.Puntuacion;
 import Modelo.Rectangulo;
-import Modelo.RectanguloVacio;
 
 public class DragAndDropView extends SurfaceView implements SurfaceHolder.Callback {
 
     private HiloPintar thread;
-    private Rectangulo rectangulo;
     private int figuraActiva;
     private ArrayList<Figura> figuras;
-    private int puntuacion;
+    private Puntuacion puntuacion;
 
     public DragAndDropView(Context context) {
         super(context);
         getHolder().addCallback(this);
     }
 
-    public void agregarFigura(Figura figura) {
-        if(figuras != null) {
-            figuras.add(figura);
-            invalidate();
-        }
+    public List<Integer> generarPosicionRandom() {
+        int maximoX = getWidth()-100;
+        int maximoY = getHeight()-100;
+        int x = (int) (Math.random() * maximoX);
+        int y = (int) (Math.random() * maximoY);
+
+        List<Integer> list = new ArrayList<>();
+        list.add(x);
+        list.add(y);
+
+        return list;
+
+    }
+
+    public void agregarRectangulo() {
+        int x = generarPosicionRandom().get(0);
+        int y = generarPosicionRandom().get(1);
+        int anchoAlto = (int) (Math.random() * 300 + 50);
+
+        Rectangulo r1 = new Rectangulo(x,y,false, anchoAlto, anchoAlto);
+        figuras.add(r1);
+
+        x = generarPosicionRandom().get(0);
+        y = generarPosicionRandom().get(1);
+
+        Rectangulo r2 = new Rectangulo(x,y,true, anchoAlto, anchoAlto);
+        figuras.add(r2);
+    }
+
+    public void agregarCirculo() {
+        int x = generarPosicionRandom().get(0);
+        int y = generarPosicionRandom().get(1);
+        int radio = (int) (Math.random() * 200 + 25);
+
+        Circulo c1 = new Circulo(x,y,false, radio);
+        figuras.add(c1);
+
+        x = generarPosicionRandom().get(0);
+        y = generarPosicionRandom().get(1);
+
+        Circulo c2 = new Circulo(x,y,true, radio);
+        figuras.add(c2);
     }
 
     @Override
@@ -77,21 +114,25 @@ public class DragAndDropView extends SurfaceView implements SurfaceHolder.Callba
         super.onDraw(canvas);
 
         for(Figura figura: figuras) {
+
+            Paint p = new Paint();
+            p.setColor(Color.BLUE);
+
+            if(figura.isRellenado()) {
+                p.setStyle(Paint.Style.FILL);
+            } else {
+                p.setStyle(Paint.Style.STROKE);
+                p.setStrokeWidth(4);
+            }
+
             if(figura instanceof Rectangulo) {
                 Rectangulo r = (Rectangulo) figura;
-                r.onDraw((int) r.getPosicionX(), (int) r.getPosicionY(), canvas);
+                r.onDraw((int) r.getPosicionX(), (int) r.getPosicionY(), canvas,p);
 
             }else if(figura instanceof Circulo){
                 Circulo c = (Circulo) figura;
-                c.onDraw((int) c.getPosicionX(), (int) c.getPosicionY(), canvas);
+                c.onDraw((int) c.getPosicionX(), (int) c.getPosicionY(), canvas,p);
 
-            } else if (figura instanceof RectanguloVacio) {
-                RectanguloVacio rv = (RectanguloVacio) figura;
-                rv.onDraw((int) rv.getPosicionX(),(int) rv.getPosicionY(), canvas);
-
-            } else if (figura instanceof CirculoVacio) {
-                CirculoVacio cv = (CirculoVacio) figura;
-                cv.onDraw((int) cv.getPosicionX(), (int) cv.getPosicionY(), canvas);
             }
         }
 
@@ -102,8 +143,10 @@ public class DragAndDropView extends SurfaceView implements SurfaceHolder.Callba
         try {
             float x =  event.getX();
             float y =(int) event.getY();
+
             switch (event.getAction()){
                 case MotionEvent.ACTION_DOWN:
+                    figuraActiva = -1;
                     for (Figura figura: figuras){
                         if(figura instanceof Circulo){
                             Circulo c = (Circulo) figura;
@@ -127,10 +170,10 @@ public class DragAndDropView extends SurfaceView implements SurfaceHolder.Callba
                         if(figura.getId() == figuraActiva){
                             figura.setPosicionX(x);
                             figura.setPosicionY(y);
-
+                            encajan(figura);
                         }
                     }
-                    detectarColisiones();
+
                 break;
             }
             return true;
@@ -140,45 +183,30 @@ public class DragAndDropView extends SurfaceView implements SurfaceHolder.Callba
         return true;
     }
 
-    private void detectarColisiones() {
-        ArrayList<Figura> figuras = colisiones();
+    public void encajan(Figura figura) {
+        List<Figura> eliminadas = new ArrayList<>();
 
-        for (Figura figura : figuras) {
-            if (figura instanceof Circulo) {
-                Circulo c = (Circulo) figura;
-                figuras.remove(c);
-                puntuacion++;
-            } else if (figura instanceof Rectangulo) {
-                Rectangulo r = (Rectangulo) figura;
-                figuras.remove(r);
-                puntuacion++;
+        for(Figura f : figuras) {
+            if (!f.isRellenado()) {
+                float margen = 5;
+
+                if (Math.abs(f.getPosicionX() - figura.getPosicionX()) < margen && Math.abs(f.getPosicionY() - figura.getPosicionY()) < margen) {
+                    eliminadas.add(f);
+                    eliminadas.add(figura);
+                }
             }
+        }
+        for (Figura f : eliminadas) {
+            figuras.remove(f);
+        }
+        if(!eliminadas.isEmpty()) {
+            puntuacion.actualizarPuntuacion(1);
             invalidate();
         }
     }
 
-    private ArrayList<Figura> colisiones() {
-        ArrayList<Figura> figurasColisionadas = new ArrayList<>();
-
-        for (Figura figura : figuras) {
-            if (figura instanceof Circulo) {
-                Circulo c = (Circulo) figura;
-                for (Figura f : figuras) {
-                    if (f instanceof CirculoVacio && c.encajan((CirculoVacio) f)) {
-                        figurasColisionadas.add(c);
-                    }
-
-                }
-            } else if (figura instanceof Rectangulo) {
-                Rectangulo r = (Rectangulo) figura;
-                for (Figura f : figuras) {
-                    if (f instanceof RectanguloVacio && r.encajan((RectanguloVacio) f)) {
-                        figurasColisionadas.add(r);
-                    }
-                }
-            }
-        }
-        return figurasColisionadas;
+    public void setPuntuacion(Puntuacion puntuacion) {
+        this.puntuacion = puntuacion;
     }
 }
 /*
