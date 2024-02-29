@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnConfiguracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:text="Configuracion"
+        app:layout_constraintBottom_toTopOf="@+id/btnSalir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnListarCitas" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginBottom="44dp"
+        android:text="Citas"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCita"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnCita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginBottom="19dp"
+        android:text="Cita"
+        app:layout_constraintBottom_toTopOf="@+id/btnInsertarCita"
+        app:layout_constraintStart_toStartOf="@+id/btnInsertarCita"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btnInsertarCita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="26dp"
+        android:text="Insertar Cita"
+        app:layout_constraintBottom_toTopOf="@+id/btnBorrar"
+        app:layout_constraintStart_toStartOf="@+id/btnListarCitas"
+        app:layout_constraintTop_toBottomOf="@+id/btnCita" />
+
+    <Button
+        android:id="@+id/btnBorrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="19dp"
+        android:text="Borrar Citas"
+        app:layout_constraintBottom_toTopOf="@+id/btnListarCitas"
+        app:layout_constraintStart_toStartOf="@+id/btnListarCitas"
+        app:layout_constraintTop_toBottomOf="@+id/btnInsertarCita" />
+
+    <Button
+        android:id="@+id/btnListarCitas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="23dp"
+        android:text="Listado Citas"
+        app:layout_constraintBottom_toTopOf="@+id/btnConfiguracion"
+        app:layout_constraintEnd_toEndOf="@+id/btnConfiguracion"
+        app:layout_constraintTop_toBottomOf="@+id/btnBorrar" />
+
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="196dp"
+        android:text="Salir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btnConfiguracion"
+        app:layout_constraintTop_toBottomOf="@+id/btnConfiguracion" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
